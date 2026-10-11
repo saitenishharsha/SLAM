@@ -1,0 +1,22 @@
+# Visual SLAM config — see docs/custom_dataset.md to adapt this to your own data.
+
+dataset:
+  type: tum_rgbd          # "tum_rgbd" | "rgbd" (generic, see docs/custom_dataset.md)
+  root: datasets/tum/rgbd_dataset_freiburg1_xyz
+  # rgb_dir / depth_dir / timestamps_file are only used by type: rgbd
+
+camera:
+  intrinsics_file: configs/camera_tum_freiburg1.yaml
+  depth_scale: 5000.0      # TUM freiburg1/2 use 5000; freiburg3 uses 5000 too
+  depth_trunc: 4.0         # meters; depth beyond this is discarded
+
+mapping:
+  method: pointcloud             # "tsdf" | "pointcloud"
+  voxel_size: 0.01
+
+output:
+  directory: results/visual_slam_tum_fr1_xyz
+  save_trajectory: true
+  save_pointcloud: true
+  save_mesh: true
+  save_trajectory_plot: true
