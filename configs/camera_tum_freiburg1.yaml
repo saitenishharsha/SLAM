@@ -1,0 +1,10 @@
+# Camera intrinsics for the TUM RGB-D "freiburg1" sequences (Kinect v1).
+# Source: https://cvg.cit.tum.de/data/datasets/rgbd-dataset/file_formats
+# For freiburg2 / freiburg3 sequences, use that sequence's own published
+# intrinsics instead — see docs/camera_calibration.md.
+fx: 517.3
+fy: 516.5
+cx: 318.6
+cy: 255.3
+width: 640
+height: 480

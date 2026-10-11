@@ -1,0 +1,26 @@
+# LiDAR SLAM config — see docs/custom_dataset.md to adapt this to your own data.
+
+dataset:
+  type: kitti              # "kitti" | "pointcloud" (generic, see docs/custom_dataset.md)
+  root: datasets/kitti/sequences/00
+  # scans_dir / timestamps_file are only used by type: pointcloud
+
+preprocessing:
+  voxel_size: 0.2
+  nb_neighbors: 20
+  std_ratio: 2.0
+
+odometry:
+  max_correspondence_distance: 1.0
+  use_scan_to_map: true
+  local_map_max_points: 200000
+
+mapping:
+  voxel_size: 0.1
+  downsample_every: 10
+
+output:
+  directory: results/lidar_slam_kitti_00
+  save_trajectory: true
+  save_pointcloud: true
+  save_trajectory_plot: true
