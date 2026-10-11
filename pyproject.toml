@@ -1,0 +1,52 @@
+[project]
+name = "slam"
+version = "0.1.0"
+description = "A modular, configurable framework for running Visual SLAM and LiDAR SLAM on custom datasets."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "Sandeep Mulagiri" },
+    { name = "Saitenish Harsha Lankipalli" }]
+dependencies = [
+    "numpy>=1.24,<2",
+    "opencv-python>=4.9,<5",
+    "open3d>=0.18",
+    "pyyaml>=6.0",
+    "matplotlib>=3.8",
+    "scipy>=1.11,<2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.6",
+    "pytest>=8.0",
+    "pre-commit>=3.7",
+]
+
+[project.scripts]
+run-visual-slam = "scripts.run_visual_slam:main"
+run-lidar-slam = "scripts.run_lidar_slam:main"
+evaluate-trajectory = "scripts.evaluate_trajectory:main"
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["slam*", "scripts*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+src = ["slam", "scripts", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "UP", "B", "SIM", "C4"]
+ignore = ["E501", "PLC0415"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["slam"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
