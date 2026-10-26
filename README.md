@@ -196,7 +196,7 @@ SLAM/
 This project was developed collaboratively by:
 
 - **[Sandeep Mulagiri](https://github.com/sandeepmulagiri225-ux)** — Contributed to the development and implementation of the Visual SLAM and LiDAR SLAM pipelines.
-- **[Saitenish Harsha](https://github.com/saitenishharsha)** — Contributed to the development and implementation of the SLAM project.
+- **[Saitenish Harsha Lankipalli](https://github.com/saitenishharsha)** — Contributed to the development and implementation of the SLAM project.
 
 Both contributors collaborated on building reusable pipelines for 3D mapping from custom RGB-D camera and LiDAR sensor data.
 
